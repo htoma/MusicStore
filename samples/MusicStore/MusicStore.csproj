@@ -2,12 +2,24 @@
 
   <PropertyGroup>
     <Description>Music store application on ASP.NET Core</Description>
-    <TargetFrameworks>netcoreapp2.1;netcoreapp2.0;net461</TargetFrameworks>
-    <DefineConstants>$(DefineConstants);DEMO</DefineConstants>
+    <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
+    <DefineConstants>TRACE;DEBUG;DEMO;NETCOREAPP2_0;RUNTIMESTORE;NETCOREAPP2_0;RELEASE;NETCOREAPP2_0;NETCOREAPP2_0;NETCOREAPP2_0</DefineConstants>
     <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RuntimeIdentifiers Condition="'$(Configuration)' != 'RuntimeStore'">win7-x86;win7-x64;linux-x64;osx-x64</RuntimeIdentifiers>
     <Configurations>Debug;Release;RuntimeStore</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.0|AnyCPU'">
+    <OutputPath>bin\Debug\netcoreapp2.0\netcoreapp2.0\netcoreapp2.0\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='RuntimeStore|netcoreapp2.0|AnyCPU'">
+    <OutputPath>bin\RuntimeStore\netcoreapp2.0\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.0|AnyCPU'">
+    <OutputPath>bin\Release\netcoreapp2.0\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
